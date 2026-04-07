@@ -96,3 +96,11 @@ console.log('Used heap size:', (heapStats.used_heap_size / 1024 / 1024).toFixed(
 console.log('Start of blocking code');
 const dat = fs.readFileSync('myfile.txt', 'utf8');
 console.log('Blocking operation completed');
+
+// non-blocking code
+console.log('Start of non-blocking code');
+fs.readFile('myfile.txt', 'utf8', (err,data) => {
+    if (err) throw err;
+    console.log('End of non-blocking operation');
+})
+console.log('This runs before the file is read');
