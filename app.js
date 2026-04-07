@@ -91,3 +91,8 @@ const heapStats = v8.getHeapStatistics();
 console.log('Heap size limit:', (heapStats.heap_size_limit / 1024 / 1024).toFixed(2), 'MB');
 console.log('Total heap size:', (heapStats.total_heap_size / 1024 / 1024).toFixed(2), 'MB');
 console.log('Used heap size:', (heapStats.used_heap_size / 1024 / 1024).toFixed(2), 'MB');
+
+// blocking code
+console.log('Start of blocking code');
+const dat = fs.readFileSync('myfile.txt', 'utf8');
+console.log('Blocking operation completed');
