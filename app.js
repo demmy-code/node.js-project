@@ -104,3 +104,9 @@ fs.readFile('myfile.txt', 'utf8', (err,data) => {
     console.log('End of non-blocking operation');
 })
 console.log('This runs before the file is read');
+
+// Synchronous code
+console.log('1. Starting sync read...');
+const data = fs.readFilesync('myfile.txt', 'utf8');
+console.log('2. File contents:', data);
+console.log('3. Done reading file');
