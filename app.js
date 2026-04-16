@@ -126,3 +126,5 @@ getUser(userID)
 .then(orders => processOrders(orders))
 .then(() => console.log('All done'))
 .catch(handleError);
+
+// CReation of promises
