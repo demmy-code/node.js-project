@@ -120,7 +120,7 @@ fs.readFile('myfile.txt', 'utf-8', (err, data) => {
 });
 console.log('3. Done initiating async read');
 
-// Promises
+// Promises avoid callback hell
 getUser(userID)
 .then(user => getOrders(user.id))
 .then(orders => processOrders(orders))
