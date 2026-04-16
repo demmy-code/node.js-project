@@ -1,6 +1,6 @@
 console.log('Hello World!');
 
-const fs = require('fs');
+const fs = require('fs')
 fs.readFile('myfile.txt', 'utf-8', (err, data) => {
     if (err) {
         console.error('Error reading file: ' + err);
@@ -107,6 +107,15 @@ console.log('This runs before the file is read');
 
 // Synchronous code
 console.log('1. Starting sync read...');
-const data = fs.readFilesync('myfile.txt', 'utf8');
+const data = fs.readFileSync('myfile.txt', 'utf8');
 console.log('2. File contents:', data);
 console.log('3. Done reading file');
+
+// Asynchronous code
+console.log('1. Starting async read...');
+fs.readFile('myfile.txt', 'utf-8', (err, data) => {
+    console.log(err)
+    if (err) throw err;
+    console.log('2. File contents:', data);
+});
+console.log('3. Done initiating async read');
