@@ -119,3 +119,10 @@ fs.readFile('myfile.txt', 'utf-8', (err, data) => {
     console.log('2. File contents:', data);
 });
 console.log('3. Done initiating async read');
+
+// Promises
+getUser(userID)
+.then(user => getOrders(user.id))
+.then(orders => processOrders(orders))
+.then(() => console.log('All done'))
+.catch(handleError);
